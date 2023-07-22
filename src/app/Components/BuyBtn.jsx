@@ -1,8 +1,13 @@
 "use client"
-import React, {useContext} from 'react'
+
+import React, {useContext, useEffect} from 'react'
 import { MiContexto } from './CartContext';
 
 const BuyBtn = ({data}) => {
+    useEffect(() => {
+document.title = `Maybelline | ${data.name}`
+    }, [])
+    
     const cart = useContext(MiContexto);
     function buyProduct(){
     cart.setCart([data, ...cart.cart])
@@ -11,7 +16,9 @@ const BuyBtn = ({data}) => {
     }, 1000);
     }
   return (
-    <button className="productDetailBuyBtn" onClick={buyProduct}>Buy</button>
+    <div>
+        <button className="productDetailBuyBtn" onClick={buyProduct}>Buy</button>
+    </div>
   )
 }
 

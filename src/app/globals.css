@@ -184,6 +184,7 @@ box-shadow: 0 0 1em 0.2em rgb(251, 134, 255);
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: space-between;
 }
 .cleanCartButton{
   background-color: white;
@@ -191,6 +192,7 @@ align-items: center;
   border-bottom: 3px solid rgb(251, 134, 255);
   font-size: 32px;
   cursor: pointer;
+margin-bottom: 1em;
   box-shadow: inset 0 0px 0 0 rgb(251, 134, 255);
 transition: 0.3s;
 
@@ -200,6 +202,22 @@ transition: 0.3s;
   border-radius: 0.2em;
 transition: 0.3s;
 }
+.finishBuy{
+
+    background-color: white;
+    border: none;
+    border-bottom: 3px solid rgb(251, 134, 255);
+    font-size: 32px;
+    cursor: pointer;
+  margin-top: 1em;
+    box-shadow: inset 0 0px 0 0 rgb(251, 134, 255);
+  transition: 0.3s;
+}
+  .finishBuy:hover{
+    box-shadow: inset 0px 0px 1em 0 rgb(251, 134, 255);
+    border-radius: 0.2em;
+  transition: 0.3s;
+  }
 
 .emptyCartContainer{
   display: flex;
@@ -216,11 +234,25 @@ opacity: 0;
 }
 .cartCardContainer{
     display: flex;
-    flex-direction: row-reverse;
 justify-content: center;
 width: 100%;
 gap: 2em;
 align-items: center;
+}
+.cartCards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
+.cartCard{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  min-width: 30%;
 }
 .cartCardTitleContainer{
   display: flex;
@@ -230,7 +262,10 @@ align-items: center;
   height: 100%;
 }
 .cartCardTitle{
-border-bottom: 2px solid rgb(251, 134, 255);
+border-bottom: 5px solid rgb(251, 134, 255);
+font-size: 24px;
+position: relative;
+top: 1em;
 }
 .cartCardPrice{
   align-self: end;
@@ -264,6 +299,15 @@ align-items: center;
 flex-direction: column;
 width: 250px;
 height: 250px;
+border:5px solid rgb(251, 134, 255);
+border-radius: 1em;
+padding: 2em;
+transition: 1s;
+}
+.productItemCard:hover{
+  transition: 1s;
+  transform: translateY(-0.5em);
+  box-shadow: inset 0 0 3em 0 rgb(251, 134, 255);
 }
 .productItemTitle{
 text-align: center;
@@ -274,6 +318,14 @@ margin: 0;
 font-size: 16px;
 color: rgb(185, 185, 185);
 text-transform: uppercase;
+}
+.productItemPrice{
+  background-color: rgb(251, 134, 255);
+  width: 100%;
+  font-size: 24px;
+  border-radius: 1em;
+color: white;
+  text-align: center;
 }
 .productItemImage{
   height: 150px;
@@ -288,9 +340,18 @@ text-decoration:none;
 
 /* PRODUCT DETAIL */
 .productDetailContainer{
+width: 100%;
 display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
+justify-content: center;
+}
+.productDetail{
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  flex-wrap: wrap;
+  border: 5px solid rgb(251, 134, 255);
+  padding: 1em;
+  border-radius: 3em;
 }
 .productDetailInfo{
 max-width: 600px;

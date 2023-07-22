@@ -8,6 +8,7 @@ const MiContextoProvider = ({ children }) => {
   /* Función para limpiar el carrito */
   function cleanCart() {
    setCart([]) 
+   document.title = "Maybelline | Cart (0)"
   }
   /* Función para limpiar el carrito */
     return (
