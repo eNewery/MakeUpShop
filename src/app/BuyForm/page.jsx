@@ -7,11 +7,14 @@ const BuyForm = () => {
     const data = useContext(MiContexto)
     console.log(data.cart)
     emailjs.init("uz5HLEJVRTHGeeoth")
-    const enviarCorreo = () => {
+    const enviarCorreo = (e) => {
+      const purchaseForm = document.querySelector(".purchaseForm")
+e.preventDefault()
+      const emailValue = document.querySelector(".eMailInput").value;
         const templateParams = {
-          to_email: 'aguxsii@gmail.com', // Email del destinatario
+          to_email: emailValue, // Email del destinatario
           from_name: 'Ulises', // Tu nombre como remitente
-          message: `La orden es la siguiente (${data.cart.map(item => item.name)})`, // Contenido del correo electrónico
+          message: `La orden es la sigu iente (${data.cart.map(item => item.name)})`, // Contenido del correo electrónico
         };
       
         emailjs.send("service_za07y5e","template_0n8m58k", templateParams)
@@ -24,7 +27,15 @@ const BuyForm = () => {
           console.log(templateParams)
       };
   return (
-    <div><button onClick={enviarCorreo}>enviar</button></div>
+    <div>
+      <h1 className='purchaseTitle'>¡Genera tu orden de compra y recíbela en tu correo!</h1>
+      <form className='purchaseForm' onSubmit={enviarCorreo}>
+        <input className='inputForm' type="text" placeholder='Nombre'/>
+        <input className='inputForm eMailInput' type="text" placeholder='E-Mail'/>
+        <input className='inputForm' type="text" placeholder='Número de teléfono'/>
+        <button className='getPurchaseBtn' type='submit'>Comprar!</button>
+      </form>
+    </div>
 
   )
 }

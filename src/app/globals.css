@@ -142,7 +142,14 @@ right: 0.9em;
   width: 100%;
   align-items: center;
   text-align: center;
+  margin-top: 1em;
+  background-color: rgb(251, 134, 255);
+color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  transition:0.3s;
 }
+
 /* FOOTER */
 
 
@@ -212,6 +219,7 @@ transition: 0.3s;
   margin-top: 1em;
     box-shadow: inset 0 0px 0 0 rgb(251, 134, 255);
   transition: 0.3s;
+  margin-bottom: 1em;
 }
   .finishBuy:hover{
     box-shadow: inset 0px 0px 1em 0 rgb(251, 134, 255);
@@ -241,19 +249,22 @@ align-items: center;
 }
 .cartCards{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
   gap: 1em;
+  flex-wrap: wrap;
 }
 .cartCard{
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
+  min-width: 20%;
+  padding: 1em;
 }
+
 .cartCardTitleContainer{
   display: flex;
   flex-direction: column;
@@ -281,8 +292,46 @@ width: 128px;
 }
 /* CART PAGE */
 
-
-
+/* PURCHASE FORM PAGE */
+.purchaseForm{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 0.2em;
+}
+.purchaseTitle{
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 1em;
+  border-bottom: 3px solid rgb(251, 134, 255);
+}
+.inputForm{
+  width: 600px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  border-bottom: 3px solid rgb(251, 134, 255);
+}
+.getPurchaseBtn{
+  margin-top: 1em;
+  font-size: 32px;
+  background: none;
+  border: none;
+  width: 200px;
+  border-bottom: 5px solid rgb(251, 134, 255);
+  cursor: pointer;
+  font-weight: 100;
+  box-shadow: inset 0 0 0 0 rgb(251, 134, 255);
+  transition: 0.3s all;
+}
+.getPurchaseBtn:hover{
+  box-shadow: inset 0 -50px 0 0 rgb(251, 134, 255);
+  transition: 0.3s all;
+  color: white;
+}
+/* PURCHASE FORM PAGE */
 
 /* PRODUCTS LIST */
 .productList{
@@ -299,7 +348,6 @@ align-items: center;
 flex-direction: column;
 width: 250px;
 height: 250px;
-border:5px solid rgb(251, 134, 255);
 border-radius: 1em;
 padding: 2em;
 transition: 1s;
@@ -424,5 +472,14 @@ width: 150px;
 }
 /* NAV */
 
+/* CART */
+.cartCard{
+  flex-direction: column-reverse;
+  padding: 1em;
+  border-radius: 1em;
+  transition: 0.3s;
+}
+
+/* CART */
 
 }
